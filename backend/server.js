@@ -17,9 +17,9 @@ mongoose
 
 
 app.use(cors({
-  credentials: true,
-  origin: ['http://localhost:8000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
+  // credentials: true,
+  // origin: ['http://localhost:8000'],
+  // methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 
 app.use(cookieParser())
