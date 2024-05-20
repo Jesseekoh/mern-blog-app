@@ -1,0 +1,25 @@
+header {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-weight: 800;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.nav__links {
+    /* min-width: 3px; */
+    gap: 1rem;
+
+    * {
+        cursor: pointer;
+    }
+}
