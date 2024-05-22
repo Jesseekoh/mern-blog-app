@@ -30,7 +30,9 @@ export const getMe = async (req, res) => {
     return res.status(404).json({message: 'User profile not found'})
   }
  // Todo: Edit return json to not include sensitive info like password
-  return res.status(200).json({message: 'success', data: userInfo})
+
+  const {id, username} = userInfo
+  return res.status(200).json({message: 'success', data: {id, username}})
   console.log(userInfo)
   
 
