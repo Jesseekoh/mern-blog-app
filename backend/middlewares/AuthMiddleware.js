@@ -13,8 +13,8 @@ export const verifyToken = (req, res, next) => {
     if (err){
       return res.status(403).json({message: 'Failed to authenticate token'})
     }
-    req.currentUser = data.id
-    console.log(data, 'authmiddleware')
+    req.currentUser = data
+    
     next()
   })
 }
