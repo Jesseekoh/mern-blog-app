@@ -1,8 +1,30 @@
 import User from '../models/UserModel.js';
 import { createSecretToken } from '../utils/SecretToken.js';
 import bcrypt from 'bcrypt';
+import { config } from 'dotenv';
+import jwt from 'jsonwebtoken'
+config()
 
-export const SignUp = async (req, res, next) => {
+
+
+export const verifyUserWithCookie = async (req, res) => {
+  const {token} = req.cookies
+  if (!token){
+    return res.status(401).json({message: 'No token provided'})
+  }
+
+  jwt.verify(token, process.env.TOKEN_KEY, (err, data) => {
+    if (err){
+      return res.status(403).json({message: 'Failed to authenticate token'})
+    }
+
+    res.status(200).json({success: true, message: 'User authorized', data: {id: data.id, username: data.username}})
+  })
+
+}
+
+
+export const signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt } = req.body;
     const existingUser = await User.findOne({ email });
@@ -35,7 +57,7 @@ export const SignUp = async (req, res, next) => {
   }
 };
 
-export const Login = async (req, res, next) => {
+export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -53,13 +75,19 @@ export const Login = async (req, res, next) => {
         .json({ message: 'Incorrect password or email' });
     }
     
-    const token = createSecretToken(user._id)
+    const token = createSecretToken(user._id, user.username)
     res.cookie('token', token, {
       withCredentials: true,
       httpOnly: false
     })
-    res.status(201).json({success: true, message: 'User logged in successfully'})
+    res.status(201).json({success: true, message: 'User logged in successfully', data: {username: user.username, id: user._id}})
   } catch (err) {
     console.error(err);
   }
 };
+
+export const logout = async (req, res) => {
+  res.clearCookie('token')
+  res.status(200).cookie('token', '').json({message: 'Successfully logged out'})
+
+}
