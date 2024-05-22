@@ -27,7 +27,7 @@ const BlogCard = () => (
         <CiBookmarkPlus
           fontWeight={900}
           size={30}
-          className="bookmark-btn cursor-pointer  text-yellow-700 border-yellow-700  p-1"
+          className="bookmark-btn cursor-pointer hover:text-yellow-400  text-yellow-700 border-yellow-700  p-1"
         />
 
         <p className="text-sm">May 19</p>
