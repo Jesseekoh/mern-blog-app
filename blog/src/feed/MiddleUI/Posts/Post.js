@@ -8,23 +8,21 @@ import UserImage from '../../../userUi/userImage';
 import './styles/posts.css'
 const Post = () => {
   return (
-   <div className='main-post-comp'>
-     <div>
+    <div className='main-post-comp'>
        <UserImage />
-     </div>
-     <div>
-       <div>
-         <UserName />
-	 <PostContent />
-       </div>
-       <div>
-	  <Comments />
-	  <Likes />
-	  <Views />
-	  <Dislikes />
-       </div>
-     </div>
-   </div>
+      <div className='post-second-section'>
+        <div className='post-content'>
+          <UserName />
+	        <PostContent />
+        </div>
+        <div className='post-reaction-div'>
+	      <Comments />
+	      <Likes />
+	      <Views />
+	      <Dislikes />
+        </div>
+      </div>
+    </div>
   );
 }
 

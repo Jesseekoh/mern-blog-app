@@ -1,4 +1,14 @@
 .main-post-comp {
     border: 1px solid crimson;
     margin-bottom: 30px;
+    display: flex;
+}
+
+.post-second-section {
+    border: 1px solid blue;
+    flex: 1;
+}
+
+.post-content {
+    border: 1px solid crimson;
 }

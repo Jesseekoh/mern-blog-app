@@ -1,3 +1,12 @@
 .user-image-div {
     margin-right: 25px;
+    border: 1px solid red;
+    height: 50px;
+    width: 50px;
+}
+
+.profile-picture {
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: left;
 }
