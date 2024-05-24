@@ -1,6 +1,6 @@
 const userPostNum = () => {
   return (
-    <div>
+    <div className='total-post-div'>
       <p>5k Posts</p>
     </div>
   );

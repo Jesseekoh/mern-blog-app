@@ -1,6 +1,11 @@
 * {
     margin: 0;
 }
+
+p {
+  font-weight: 600;
+}
+
 .left-ui {
     border-right: 3px solid #F69A10;
     height: 100vh;
@@ -26,9 +31,23 @@
     justify-content: left;
 }
 
+.left-ui-user-info2,
+.left-ui-user-info3 {
+  font-size: 20px;
+}
+
+.custom-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .left-ui-nav {
     height: 100%;
     width: 100%;
+}
+
+.left-ui-nav {
+  font-size: 25px;
 }
 
 .left-ui-nav ul {
@@ -39,9 +58,26 @@
 }
 
 .left-ui-nav ul li {
+    text-decoration: none;
+    color: initial;
     margin-top: 30px;
+}
+
+.left-ui-nav ul li a{
+    text-decoration: none;
+    color: initial;
 }
 
 .link-info {
     margin-left: 30px;
+}
+
+.nav-icon-div {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-icon-image {
+  height: 100%;
+  width: 100%;
 }

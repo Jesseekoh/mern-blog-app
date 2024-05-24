@@ -1,9 +1,13 @@
+import './styles/userName.css'
+
 const userName = ({
-  name='vinicius Wiesehofer'
+  name='Mike Owen',
+  text_color='#F69A10',
+  nameSize='30px'
 }) => {
   return (
-    <div>
-    <p>{name}</p>
+    <div className="username-div">
+    <p size={nameSize} style={{color: text_color}}>{name}</p>
     </div>
   );
 }

@@ -6,21 +6,19 @@ import './styles/trendingPost.css'
 const trendingPost = () => {
   return (
     <div className='trending-post'>
-      <div>
-        <div>
+      <div className='first-section'>
 	  <UserImage />
-	</div>
-	<div>
+	<div className='trending-info'>
 	  <UserName />
-	  <PostContent />
+	  <PostContent/>
 	</div>
       </div>
-      <div>
-        <div>
+      <div className='second-section'>
+        <div className='more-info-div'>
 	  <p>Total Engagement</p>
 	  <p>2.9M</p>
 	</div>
-        <p>1min ago</p>
+        <p className='timer'>1min ago</p>
       </div>
     </div>
   );

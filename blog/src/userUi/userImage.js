@@ -4,7 +4,8 @@ import defaultImage from '../assets/vinicius-wiesehofer.jpg';
 const userImage = ({
   height=50,
   width=50,
-  image=defaultImage}) => {
+  image=defaultImage
+}) => {
   return (
     <div className="user-image-div">
       <img className='profile-picture'

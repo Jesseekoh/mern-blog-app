@@ -7,6 +7,7 @@ import SettingsLink from './settingsLink';
 import UserImage from '../../userUi/userImage';
 import UserName from '../../userUi/userName';
 import './Styles/LeftUi.css';
+import { Link } from 'react-router-dom';
 
 const LeftUi = () => {
   return (
@@ -14,11 +15,11 @@ const LeftUi = () => {
       <div className='left-ui-user-info'>
         <div className='left-ui-user-info1'>
           <UserImage />
-          <UserName />
+          <UserName text_color='#000' />
 	      </div>
 	      <div className='left-ui-user-info2'>
-          <UserFollowers />
-          <UserFollowing />
+                <UserFollowers />
+                <UserFollowing />
 	      </div>
 	      <div className='left-ui-user-info3'>
 	        <UserPostNum />
@@ -26,10 +27,16 @@ const LeftUi = () => {
       </div>
       <div className='left-ui-nav'>
         <ul>
-	        <li><ProfileLink /></li>
-	        <li><NewPostLink /></li>
-	        <li><SettingsLink /></li>
-	      </ul>
+	  <li>
+	    <Link className='custom-link' to='/profile'><ProfileLink /></Link>
+	  </li>
+	  <li>
+	    <Link to='/new-post'><NewPostLink /></Link>
+	  </li>
+	  <li>
+	    <Link to='/settings'><SettingsLink /></Link>
+	  </li>
+	</ul>
       </div>
     </section>
   );

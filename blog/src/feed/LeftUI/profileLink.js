@@ -1,13 +1,19 @@
 import './Styles/profileLink.css'
+import defaultImage from '../../assets/icons8-user-50.png';
 
-const profileLink = () => {
+const profileLink = ({
+  image=defaultImage
+}) => {
   return (
     <div className="profile-link">
-      <div>
-        icon
+      <div className='nav-icon-div'>
+        <img
+	  className='nav-icon-image'
+	  src={image}
+	  alt=''/>
       </div>
       <div className='link-info'>
-	      Profile
+        Profile
       </div>
     </div>
   );

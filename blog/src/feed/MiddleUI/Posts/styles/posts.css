@@ -1,14 +1,51 @@
+* {
+    margin: 0;
+}
+
 .main-post-comp {
-    border: 1px solid crimson;
     margin-bottom: 30px;
     display: flex;
 }
 
 .post-second-section {
-    border: 1px solid blue;
     flex: 1;
 }
 
 .post-content {
-    border: 1px solid crimson;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.post-reaction-div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.reaction-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reaction-icon-div {
+  height: 30px;
+  width: 30px;
+}
+
+.reaction-icon {
+  height: 30px;
+  width: 30px;  
+}
+
+.reaction-stats-div {
+}
+
+.reaction-stats-div p {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.post-content {
+  font-size: 30px;
 }

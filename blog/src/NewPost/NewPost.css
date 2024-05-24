@@ -1,0 +1,22 @@
+.new-post-div {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.new-post-div .back-icon-div {
+  left: 20px;
+  top: 20px;
+}
+.new-post-div .post-button-div {
+  display: flex;
+  justify-content: end;
+  padding: 20px 35px 20px 0;
+}
+
+.new-post-div .post-input-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,17 @@
+.Profile-Bottom-Ui {
+  width: 100%;
+  display: flex;
+}
+
+.Profile-Bottom-Ui .left-section,
+.Profile-Bottom-Ui .right-section{
+  width: 450px;
+  padding: 10px;
+}
+
+.Profile-Bottom-Ui .middle-section {
+  border-right: 1px solid lightblue;
+  border-left: 1px solid lightblue;
+  padding: 10px 30px 10px 30px;
+}
+

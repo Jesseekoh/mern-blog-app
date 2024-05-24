@@ -1,6 +1,6 @@
 const userFollowing = () => {
   return (
-    <div>
+    <div className='following-div'>
       <p>9 following</p>
     </div>
   );
