@@ -1,0 +1,66 @@
+.profile-middle-ui {
+  border-bottom: 2px solid #F69A10;
+  position: relative;
+  padding-left: 60px;
+}
+
+.profile-middle-ui a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-middle-ui .profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.profile-middle-ui .user-image-div {
+  width: 200px;
+  height: 200px;
+}
+
+.profile-middle-ui .user-image-div {
+  margin: 0;
+}
+.profile-middle-ui .user-name-image-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: -110px;
+}
+.profile-middle-ui .bio-div p {
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+.profile-middle-ui .follow-info-div {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+.profile-section .total-post-div {
+  font-size: 25px;
+}
+
+.profile-middle-ui .follow-info-div .following-div {
+  margin-right: 30px;
+}
+
+.profile-middle-ui .nav-div {
+  margin-top: 20px;
+  width: 60%;
+}
+
+.profile-middle-ui .nav-div ul{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.profile-middle-ui .nav-div ul li {
+  font-size: 25px;
+}

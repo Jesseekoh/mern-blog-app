@@ -1,0 +1,56 @@
+.settings-div {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.settings-div .back-icon-div {
+  top: 70px;
+  left: 30px;
+}
+
+.setting-header-div {
+  border-bottom: 4px solid #F69A10;
+  display: flex;
+  height: 182px;
+  align-items: center;
+  padding-left: 150px;
+  margin-bottom: 30px;
+}
+
+.setting-header-div h2 {
+  font-size: 35px;
+}
+
+.settings-div .setting-options-div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.settings-div .settings-second {
+  margin-bottom: 40px;
+}
+
+.setting-icon-div {
+  height: 50px;
+  width: 50px;
+  margin: 0 80px 0 20px;
+}
+
+.setting-icon-div img {
+  height: 100%;
+  width: 100%;
+}
+
+.setting-details-div {
+}
+
+.setting-details-div h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.setting-details-div p {
+  font-size: 20px;
+  width: 350px;
+}

@@ -1,0 +1,11 @@
+.user-image-div {
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.profile-picture {
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: left;
+}
