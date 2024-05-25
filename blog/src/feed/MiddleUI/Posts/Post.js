@@ -11,6 +11,10 @@ import defaultImage from '../../../assets/vinicius-wiesehofer.jpg';
 const Post = ({
   name='Mike Owen',
   image=defaultImage,
+  commentsNo=0,
+  likesNo=0,
+  viewsNo=0,
+  dislikesNo=0,
   postContent='Even though no-code tool are gaining pupolarity there is just much you can\'t do with them compared to Programming Languages'
 }) => {
   return (
@@ -22,10 +26,10 @@ const Post = ({
 	    <PostContent content={postContent}/>
         </div>
         <div className='post-reaction-div'>
-	      <Comments />
-	      <Likes />
-	      <Views />
-	      <Dislikes />
+	      <Comments num={commentsNo}/>
+	      <Likes num={likesNo} />
+	      <Views num={viewsNo}/>
+	      <Dislikes num={dislikesNo}/>
         </div>
       </div>
     </div>

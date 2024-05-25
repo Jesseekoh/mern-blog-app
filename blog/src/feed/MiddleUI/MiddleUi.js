@@ -4,7 +4,13 @@ import './styles/middleUi.css'
 const MiddleUi = () => {
   return (
     <section className='middle-section'>
-      <Post />
+      <Post
+        commentsNo={2}
+	likesNo={4}
+	viewsNo={8}
+	dislikesNo={1}
+      />
+
       <Post />
       <Post />
       <Post />

@@ -4,13 +4,18 @@ import RightUi from './RightUI/RightUi';
 import './styles/feed.css';
 
 const Feed = () => {
+  const isLogin = false;
   return (
     <main >
-      <LeftUi />
+      <LeftUi
+        isLogin={isLogin}
+      />
       <div className='main-ui'>
         <MiddleUi />
       </div>
-      <RightUi />
+      <RightUi
+        isLogin={isLogin}
+      />
     </main>
   );
 }

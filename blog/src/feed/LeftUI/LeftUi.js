@@ -9,7 +9,10 @@ import UserName from '../../userUi/userName';
 import './Styles/LeftUi.css';
 import { Link } from 'react-router-dom';
 
-const LeftUi = () => {
+const LeftUi = ({
+  isLogin = false
+}) => {
+  if (isLogin) {
   return (
     <section className='left-ui'>
       <div className='left-ui-user-info'>
@@ -40,5 +43,28 @@ const LeftUi = () => {
       </div>
     </section>
   );
+  } else {
+    return (
+    <section className='left-ui'>
+      <div className='left-ui-user-info'>
+        <div className='left-ui-user-info1'>
+          <UserName
+            name='Blog App'
+	    text_color='#000' />
+              </div>
+              <div className='left-ui-user-info2'>
+              </div>
+              <div className='left-ui-user-info3'>
+              </div>
+      </div>
+      <div className='left-ui-nav'>
+        <ul>
+          <li>
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+  }
 }
 export default LeftUi;

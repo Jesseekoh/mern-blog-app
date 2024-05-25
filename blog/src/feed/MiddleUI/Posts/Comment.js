@@ -1,8 +1,9 @@
 import defaultImg from '../../../assets/icons8-comment-50.png';
 
-const Comments = (
-  {image=defaultImg
-  }) => {
+const Comments = ({
+  image=defaultImg,
+  num
+}) => {
   return (
     <div className='reaction-div'>
       <div className='reaction-icon-div'>
@@ -12,7 +13,7 @@ const Comments = (
           alt=''/>
       </div>
       <div className='reaction-stats-div'>
-        <p>100</p>
+        <p>{num}</p>
       </div>
     </div>
   );

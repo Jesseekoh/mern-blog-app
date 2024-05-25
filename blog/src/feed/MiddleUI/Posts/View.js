@@ -1,8 +1,9 @@
 import defaultImg from '../../../assets/icons8-view-50.png';
 
-const Views = (
-  {image=defaultImg
-  }) => {
+const Views = ({
+  image=defaultImg,
+  num
+}) => {
   return (
     <div className='reaction-div'>
       <div className='reaction-icon-div'>
@@ -12,7 +13,7 @@ const Views = (
           alt=''/>
       </div>
       <div className='reaction-stats-div'>
-        <p>1.6k</p>
+        <p>{num}</p>
       </div>
     </div>
   );
