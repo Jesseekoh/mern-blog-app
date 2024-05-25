@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import User from './UserModel';
+import User from './UserModel.js';
 const blogSchema = new Schema({
   title: {
     type: String,
@@ -9,11 +9,11 @@ const blogSchema = new Schema({
     type: String,
     required: true,
   },
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
+  // author: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true,
+  // },
   createdAt: {
     type: Date,
     default: Date.now,

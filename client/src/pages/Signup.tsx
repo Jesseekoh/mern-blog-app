@@ -26,9 +26,7 @@ const Signup = () => {
         toast.success(message, {
           position: 'bottom-right',
         });
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        navigate('/');
       } else {
         toast.error(message, {
           position: 'bottom-right',

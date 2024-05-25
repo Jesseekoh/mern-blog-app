@@ -7,12 +7,14 @@ import {
 import { ToastContainer } from 'react-toastify';
 import MainLayout from './layout/MainLayout';
 import Blogs from './pages/Blogs';
+import BlogPage from './pages/BlogPage';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Signup from './pages/Signup';
 
 import 'react-toastify/dist/ReactToastify.css';
 import CreatePost from './pages/CreatePost';
+import { UserContextProvider } from './contexts/UserContext';
 const routes = createBrowserRouter([
   {
     path: '/login',
@@ -54,6 +56,10 @@ const routes = createBrowserRouter([
         path: '/create-post',
         element: <CreatePost />,
       },
+      {
+        path: '/blogs/:blogId',
+        element: <BlogPage />,
+      },
     ],
   },
 ]);
@@ -63,8 +69,10 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={routes}></RouterProvider>
-      <ToastContainer />
+      <UserContextProvider>
+        <RouterProvider router={routes}></RouterProvider>
+        <ToastContainer />
+      </UserContextProvider>
     </>
   );
 }

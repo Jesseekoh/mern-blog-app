@@ -6,6 +6,9 @@ const MainLayout = () => (
     <main className="mx-auto">
       <Outlet />
     </main>
+    <aside className="side-content">
+      {/* This will contain trending blog post */}
+    </aside>
     <footer>
       <p className="text-center">
         Made with 💓 by{' '}

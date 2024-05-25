@@ -12,6 +12,13 @@ export const createBlogPost = async (req, res) => {
   res.status(200).json(blog)
 }
 
+
+/**
+ * Retrieves a single blog post from the Id in the URL
+ * @param {*} req Express request object
+ * @param {*} res Express response object
+ * @returns 
+ */
 export const getBlog = async (req, res) => {
 
   const {blogId}= req.params
@@ -21,7 +28,7 @@ export const getBlog = async (req, res) => {
     return res.status(404).json({error: "Document not found"})
   }
 
-  res.status(200).json(blog)
+  res.status(200).json({success: true, data: blog})
 }
 
 
