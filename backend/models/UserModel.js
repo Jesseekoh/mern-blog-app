@@ -12,6 +12,14 @@ const userSchema = new Schema({
     required: [true, 'Your username is required'],
     unique: true
   },
+  bio: {
+    type: String,
+    default: 'No bio....'
+  },
+  country: {
+    type: String,
+    required: [true, 'Please enter your Country']
+  },
   password: {
     type: String,
     required: [true, 'Your password is required'],
