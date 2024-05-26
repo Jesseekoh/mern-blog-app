@@ -25,7 +25,7 @@ router.get('/profile/:userId', verifyToken, getMe)
 
 // Blog routes
 // create post
-router.post('/blog/create', verifyToken, createBlogPost)
+router.post('/blogs/create', verifyToken, createBlogPost)
 // get all blog posts
 router.get('/blogs/all', getAllBlogs)
 // fetch post
