@@ -48,7 +48,7 @@ const Nav = () => {
   }, [setUserDetails]);
 
   return (
-    <header className="header fixed w-full top-0">
+    <header className="header fixed w-full top-0 z-50">
       <nav>
         <div className="nav__container flex justify-between w-full px-3 py-3">
           <Link

@@ -7,7 +7,9 @@ import router from './routes/Route.js'
 import mongoose from 'mongoose'
 import { verifyToken } from './middlewares/AuthMiddleware.js'
 
-const {PORT, DB_URI} = process.env
+const PORT = process.env.PORT || 8000
+const DB_URI = process.env.DB_URI || 'mongodb://localhost:27017/mern_blog'
+// const {PORT, DB_URI} = process.env
 const app = express()
 
 mongoose
@@ -18,7 +20,7 @@ mongoose
 
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:8000', 'http://localhost:5173'],
+  origin: ['http://localhost:8000', 'http://localhost:5173', 'http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 

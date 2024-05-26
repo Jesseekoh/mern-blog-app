@@ -1,6 +1,6 @@
 import {login, signup, logout, verifyUserWithCookie} from '../controllers/AuthController.js'
 import express from 'express'
-import {getMe} from '../controllers/UserController.js'
+import {getMe, getProfile} from '../controllers/UserController.js'
 import { verifyToken } from '../middlewares/AuthMiddleware.js'
 import { createBlogPost, getAllBlogs, getBlog } from '../controllers/BlogController.js'
 const router = express.Router()
@@ -16,7 +16,8 @@ router.get('/verify-user-with-cookie', verifyUserWithCookie);
 
 // get blogs
 // get user profile
-router.get('/profile/:userId', verifyToken, getMe)
+router.get('/myProfile', verifyToken, getMe)
+router.get('/profile/:profileId', getProfile)
 
 
 // TODO: create route for editing blog post

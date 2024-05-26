@@ -25,9 +25,7 @@ const Login = () => {
         toast.success(message, {
           position: 'top-right',
         });
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        navigate('/');
       } else {
         toast.error(message, {
           position: 'top-right',

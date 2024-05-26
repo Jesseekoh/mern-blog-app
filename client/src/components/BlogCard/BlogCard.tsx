@@ -39,7 +39,9 @@ const BlogCard = ({
         </Link>
       </div>
       <div className="blog__desc_main">
-        <h2 className="blog__title text-xl font-bold">{title}</h2>
+        <Link to={`/blogs/${id}`}>
+          <h2 className="blog__title text-xl font-bold">{title}</h2>
+        </Link>
       </div>
 
       <div className="blog__info flex justify-between mt-4 items-center col-span-5">

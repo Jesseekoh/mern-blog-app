@@ -2,6 +2,7 @@ import './App.css';
 import {
   RouterProvider,
   createBrowserRouter,
+  json,
   redirect,
 } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -18,6 +19,7 @@ import { UserContextProvider } from './contexts/UserContext';
 import Profile from './pages/Profile';
 import ProfileLayout from './layout/ProfileLayout';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import BlogLayout from './layout/BlogLayout';
 
 const routes = createBrowserRouter([
   {
@@ -87,9 +89,45 @@ const routes = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+    ],
+  },
+  {
+    path: '/blogs/:blogId',
+    element: <BlogLayout />,
+    children: [
       {
-        path: '/blogs/:blogId',
+        index: true,
         element: <BlogPage />,
+        loader: async ({ params }) => {
+          try {
+            const { blogId } = params;
+            const response = await fetch(
+              `http://localhost:8000/blogs/post/${blogId}`,
+              {
+                credentials: 'include',
+              }
+            );
+
+            if (response.ok) {
+              const blogPost = await response.json();
+              console.log(blogPost);
+              const { author: profileId } = blogPost.data;
+
+              let author = await fetch(
+                `http://localhost:8000/profile/${profileId}`
+              );
+
+              if (author) {
+                author = await author.json();
+                return json({ author, blogPost });
+              }
+            }
+            return null;
+          } catch (err) {
+            console.log(err);
+            return null;
+          }
+        },
       },
     ],
   },

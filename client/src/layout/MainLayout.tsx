@@ -3,7 +3,7 @@ import Nav from '../components/Nav/Nav';
 const MainLayout = () => (
   <>
     <Nav />
-    <main className="mx-auto">
+    <main className="mx-auto max-w-[600px]">
       <Outlet />
     </main>
     <aside className="side-content">

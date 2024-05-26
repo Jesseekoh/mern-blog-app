@@ -5,12 +5,8 @@ const BlogLayout = () => {
   return (
     <>
       <Nav />
-      <main className="mx-auto">
-        <Outlet />
-      </main>
-      <aside className="side-content">
-        {/* This will contain trending blog post */}
-      </aside>
+      <Outlet />
+      <main className=""></main>
       <footer>
         <p className="text-center">
           Made with 💓 by{' '}

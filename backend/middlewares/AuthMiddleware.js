@@ -9,7 +9,7 @@ export const verifyToken = (req, res, next) => {
     return res.status(401).json({message: 'No token provided'})
   }
 
-  jwt.verify(token, process.env.TOKEN_KEY, (err, data) => {
+  jwt.verify(token, process.env.TOKEN_KEY || 'abcdefghijklmnopqrstuvwxyx', (err, data) => {
     if (err){
       return res.status(403).json({message: 'Failed to authenticate token'})
     }
