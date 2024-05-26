@@ -7,6 +7,7 @@ export interface IBlogPostType {
   _id: string;
   views: number;
   likes: number;
+  author: string;
   createdAt: Date;
 }
 
@@ -40,6 +41,7 @@ const Blogs = () => {
             likes={post.likes}
             views={post.views}
             key={post._id}
+            authorId={post.author}
             createdAt={post.createdAt}
           />
         ))
