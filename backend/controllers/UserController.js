@@ -38,7 +38,7 @@ export const getProfile = async (req, res) => {
   const { profileId } = req.params;
 
   // get userInfo
-  console.log(profileId)
+  console.log(profileId);
   const userInfo = await User.findOne({ _id: profileId });
 
   if (!userInfo) {
