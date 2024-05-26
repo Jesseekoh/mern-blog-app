@@ -9,13 +9,21 @@ export interface IBlogCardProps {
   id: string;
   views: number;
   likes: number;
+  authorId: string;
   createdAt: Date;
 }
 
-const BlogCard = ({ title, id, views, likes, createdAt }: IBlogCardProps) => (
+const BlogCard = ({
+  title,
+  id,
+  views,
+  likes,
+  createdAt,
+  authorId,
+}: IBlogCardProps) => (
   <div className="blog-card mb-2 bg-white">
     <div className="img__wrapper">
-      <Link to={`/blog/${id}`}>
+      <Link to={`/blogs/${id}`}>
         <img
           src={'https://placehold.co/500x250?text=Blog+Image'}
           className="max-w-full object-cover block mx-auto pt-3"
@@ -26,7 +34,7 @@ const BlogCard = ({ title, id, views, likes, createdAt }: IBlogCardProps) => (
       <div className="author-info flex items-center">
         <img src={profileThumbnail} className="rounded-full h-10 w-10 mr-1" />
 
-        <Link to={`/authors/`} className="cursor-pointer text-sm">
+        <Link to={`/profile/${authorId}`} className="cursor-pointer text-sm">
           Jesse Ekoh-Ordan
         </Link>
       </div>
