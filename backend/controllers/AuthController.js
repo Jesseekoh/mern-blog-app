@@ -20,6 +20,7 @@ export const verifyUserWithCookie = async (req, res) => {
 
   jwt.verify(token, process.env.TOKEN_KEY, (err, data) => {
     if (err){
+      res.clearCookie('token')
       return res.status(403).json({message: 'Failed to authenticate token'})
     }
 
