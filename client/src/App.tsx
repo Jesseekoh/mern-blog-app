@@ -7,12 +7,18 @@ import {
 import { ToastContainer } from 'react-toastify';
 import MainLayout from './layout/MainLayout';
 import Blogs from './pages/Blogs';
+import BlogPage from './pages/BlogPage';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Signup from './pages/Signup';
 
 import 'react-toastify/dist/ReactToastify.css';
 import CreatePost from './pages/CreatePost';
+import { UserContextProvider } from './contexts/UserContext';
+import Profile from './pages/Profile';
+import ProfileLayout from './layout/ProfileLayout';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
 const routes = createBrowserRouter([
   {
     path: '/login',
@@ -52,19 +58,57 @@ const routes = createBrowserRouter([
       },
       {
         path: '/create-post',
-        element: <CreatePost />,
+        loader: async () => {
+          try {
+            const response = await fetch(
+              'http://localhost:8000/verify-user-with-cookie',
+              {
+                credentials: 'include',
+              }
+            );
+
+            if (response.ok) {
+              const data = await response.json();
+              const userInfo = data.data;
+              if (userInfo) {
+                // setUserDetails(userInfo);
+                return userInfo;
+              }
+            }
+            return redirect('/login');
+          } catch (err) {
+            console.log(err);
+            return redirect('/login');
+          }
+        },
+        element: (
+          <ProtectedRoute>
+            <CreatePost />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: '/blogs/:blogId',
+        element: <BlogPage />,
       },
     ],
   },
+  {
+    path: '/profile',
+    element: <ProfileLayout />,
+    children: [{ path: '/profile/:profileId', element: <Profile /> }],
+  },
 ]);
-
 function App() {
+  // const { setUserDetails } = useContext(UserContext) as UserContextType;
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <RouterProvider router={routes}></RouterProvider>
-      <ToastContainer />
+      <UserContextProvider>
+        <RouterProvider router={routes}></RouterProvider>
+        <ToastContainer />
+      </UserContextProvider>
     </>
   );
 }

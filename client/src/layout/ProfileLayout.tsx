@@ -1,14 +1,11 @@
 import { Outlet, Link } from 'react-router-dom';
 import Nav from '../components/Nav/Nav';
-const MainLayout = () => (
+const ProfileLayout = () => (
   <>
     <Nav />
     <main className="mx-auto">
       <Outlet />
     </main>
-    <aside className="side-content">
-      {/* This will contain trending blog post */}
-    </aside>
     <footer>
       <p className="text-center">
         Made with 💓 by{' '}
@@ -19,4 +16,4 @@ const MainLayout = () => (
   </>
 );
 
-export default MainLayout;
+export default ProfileLayout;

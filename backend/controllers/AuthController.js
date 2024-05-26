@@ -6,7 +6,12 @@ import jwt from 'jsonwebtoken'
 config()
 
 
-
+/**
+ * Autheticates a user using credentials stored in cookie
+ * @param {*} req Express Request object
+ * @param {*} res Express Response object
+ * @returns 
+ */
 export const verifyUserWithCookie = async (req, res) => {
   const {token} = req.cookies
   if (!token){
@@ -15,6 +20,7 @@ export const verifyUserWithCookie = async (req, res) => {
 
   jwt.verify(token, process.env.TOKEN_KEY, (err, data) => {
     if (err){
+      res.clearCookie('token')
       return res.status(403).json({message: 'Failed to authenticate token'})
     }
 
@@ -23,7 +29,13 @@ export const verifyUserWithCookie = async (req, res) => {
 
 }
 
-
+/**
+ * Handles signing up a user
+ * @param {*} req Express Request object
+ * @param {*} res Express Response object
+ * @param {*} next Next middleware
+ * @returns 
+ */
 export const signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt } = req.body;
@@ -40,16 +52,16 @@ export const signup = async (req, res, next) => {
       createdAt,
     });
 
-    const token = createSecretToken(user._id);
+    const token = createSecretToken(user._id, user.username);
 
     res.cookie('token', token, {
       withCredentials: true,
       httpOnly: false,
     });
-
+    // const 
     res
       .status(201)
-      .json({ message: 'User signed in successfully', success: true, user });
+      .json({ message: 'User signed in successfully', success: true, data: {username: user.username, id: user._id} });
 
     next();
   } catch (err) {
@@ -57,6 +69,14 @@ export const signup = async (req, res, next) => {
   }
 };
 
+/**
+ * Handles logging in a user
+ * @param {*} req Express Request object
+ * @param {*} res Express Response object
+ * @param {*} next 
+ * @returns response with a status code of 401 or 404 on error and 
+ * 201 on success
+ */
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -86,6 +106,12 @@ export const login = async (req, res, next) => {
   }
 };
 
+
+/**
+ * Logs out a user
+ * @param {*} req 
+ * @param {*} res 
+ */
 export const logout = async (req, res) => {
   res.clearCookie('token')
   res.status(200).cookie('token', '').json({message: 'Successfully logged out'})
