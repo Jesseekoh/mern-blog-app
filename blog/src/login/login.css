@@ -1,88 +1,87 @@
 .main-signup-div {
- display: flex;
- align-items: center;
- justify-content: space-between;
- height: 100vh;
- padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 30px;
 }
 
-.signup-info {
-}
+.signup-info {}
 
-.signup-info h1{
-  font-size: 60px;
-  width: 400px;
+.signup-info h1 {
+    font-size: 60px;
+    width: 400px;
 }
 
 .signup-container {
-  border: 2px solid #F69A10;
-  border-radius: 10px;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    border: 2px solid #F69A10;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .signup-container .signup-top-input-div {
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
 }
 
 .signup-container .signup-details-div {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .signup-container label {
-  margin-bottom: 5px;
-  font-size: 25px;
+    margin-bottom: 5px;
+    font-size: 25px;
 }
 
 .signup-container .signup-details-div input {
-  height: 40px;
-  width: 300px;
-  font-size: 25px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid black;
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .signup-details-div input:focus,
 .signup-password-div input:focus {
-  outline: none;
+    outline: none;
 }
 
 .signup-container .signup-bottom-input-div {
-  display: grid;
-  grid-row-gap: 20px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-row-gap: 20px;
+    margin-bottom: 20px;
 }
 
 .signup-bottom-input-div .signup-password-div {
-  display: grid;
+    display: grid;
 }
 
 
 .signup-password-div input {
-  height: 40px;
-  width: 60%;
-  font-size: 25px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid black;
+    height: 40px;
+    width: 60%;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .signup-container button {
-  padding: 10px 0;
-  border-radius: 10px;
-  border: 2px solid lightblue;
-  font-size: 20px;
-  margin-bottom: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 2px solid lightblue;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .signup-container p a {
-  color: blue;
+    color: blue;
 }

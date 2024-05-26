@@ -17,20 +17,24 @@ export const verifyUserWithCookie = async (req, res) => {
     return res.status(401).json({ message: 'No token provided' });
   }
 
-  jwt.verify(token, process.env.TOKEN_KEY || 'abcdefghijklmnopqrstuvwxyx', (err, data) => {
-    if (err) {
-      res.clearCookie('token');
-      return res.status(403).json({ message: 'Failed to authenticate token' });
-    }
+  jwt.verify(
+    token,
+    process.env.TOKEN_KEY || 'abcdefghijklmnopqrstuvwxyx',
+    (err, data) => {
+      if (err) {
+        res.clearCookie('token');
+        return res
+          .status(403)
+          .json({ message: 'Failed to authenticate token' });
+      }
 
-    res
-      .status(200)
-      .json({
+      res.status(200).json({
         success: true,
         message: 'User authorized',
         data: { id: data.id, username: data.username },
       });
-  });
+    }
+  );
 };
 
 /**
@@ -42,7 +46,7 @@ export const verifyUserWithCookie = async (req, res) => {
  */
 export const signup = async (req, res, next) => {
   try {
-    const { email, password, username, createdAt } = req.body;
+    const { email, password, username, bio, country, createdAt } = req.body;
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
@@ -54,6 +58,8 @@ export const signup = async (req, res, next) => {
       password,
       username,
       createdAt,
+      bio,
+      country,
     });
 
     const token = createSecretToken(user._id, user.username);
@@ -63,13 +69,11 @@ export const signup = async (req, res, next) => {
       httpOnly: false,
     });
     // const
-    res
-      .status(201)
-      .json({
-        message: 'User signed in successfully',
-        success: true,
-        data: { username: user.username, id: user._id },
-      });
+    res.status(201).json({
+      message: 'User signed in successfully',
+      success: true,
+      data: { username: user.username, id: user._id },
+    });
 
     next();
   } catch (err) {
@@ -106,15 +110,13 @@ export const login = async (req, res, next) => {
     const token = createSecretToken(user._id, user.username);
     res.cookie('token', token, {
       withCredentials: true,
-      httpOnly: false
+      httpOnly: false,
     });
-    res
-      .status(201)
-      .json({
-        success: true,
-        message: 'User logged in successfully',
-        data: { username: user.username, id: user._id },
-      });
+    res.status(201).json({
+      success: true,
+      message: 'User logged in successfully',
+      data: { username: user.username, id: user._id },
+    });
   } catch (err) {
     console.error(err);
   }
