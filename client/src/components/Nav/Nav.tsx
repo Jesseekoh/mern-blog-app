@@ -45,7 +45,7 @@ const Nav = () => {
       }
     };
     validateTokenFromCookie();
-  }, []);
+  }, [setUserDetails]);
 
   return (
     <header className="header fixed w-full top-0">
@@ -78,7 +78,7 @@ const Nav = () => {
                 </li>
 
                 <li className="border-indigo-500 border-2 bg-indigo-500 text-white px-2 py-1 rounded-lg ">
-                  <Link to={'/create'} className="flex gap-1 items-center">
+                  <Link to={'/create-post'} className="flex gap-1 items-center">
                     {/* <p> */}
                     <span>Create</span>{' '}
                     <span className="hidden md:block">Post</span>
