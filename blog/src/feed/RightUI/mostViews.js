@@ -2,6 +2,7 @@ import PostContent from '../MiddleUI/Posts/Content';
 import UserImage from '../../userUi/userImage';
 import UserName from '../../userUi/userName';
 import './styles/mostViews.css';
+import { Link } from 'react-router-dom';
 
 const mostViews = ({
   isLogin=false
@@ -37,8 +38,11 @@ const mostViews = ({
       </div>
       <div className='first-section'>
         <div className='trending-info'>
-          <UserName
-	    name='Login'/>
+	  <Link to="/login">
+            <UserName
+	      name='Login'
+	    />
+	  </Link>
           <PostContent />
         </div>
       </div>

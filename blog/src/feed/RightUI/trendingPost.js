@@ -3,6 +3,7 @@ import UserImage from '../../userUi/userImage';
 import UserName from '../../userUi/userName';
 import './styles/trendingPost.css'
 import trendPostImage from '../../assets/alex.jpg';
+import { Link } from 'react-router-dom';
 
 const trendingPost = ({
   isLogin=false
@@ -37,9 +38,11 @@ const trendingPost = ({
       <div className='trending-post'>
         <div className='first-section'>
 	  <div className='trending-info'>
+	    <Link to="/signup">
 	    <UserName
 	      name='Sign Up'
 	    />
+	    </Link>
 	    <PostContent/>
 	  </div>
         </div>
