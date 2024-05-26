@@ -1,9 +1,8 @@
-import 'eslint-config-standard'
+import globals from "globals";
+import pluginJs from "@eslint/js";
+
+
 export default [
-  {
-    // extends: ["standard"],
-    rules: {
-      
-    }
-  }
-]
+  {languageOptions: { globals: globals.node }},
+  pluginJs.configs.recommended,
+];
