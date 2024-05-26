@@ -4,7 +4,11 @@ export const createBlogPost = async (req, res) => {
   // console.log(req.currentUser)
   const {title, content} = req.body
 
-  const blog = await Blog.create({title, content})
+  const author = req.currentUser.id
+
+
+
+  const blog = await Blog.create({title, content, author})
 
   if (!blog) {
     res.status(403).json({error: "Failed to create document"})
