@@ -1,0 +1,8 @@
+.blog-middle {
+  display: grid;
+  padding: 20px 0px;
+}
+
+.blog-middle .blog-content-div {
+  border: 1px solid red;
+}

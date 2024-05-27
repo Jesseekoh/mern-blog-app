@@ -4,7 +4,7 @@ import RightUi from './RightUI/RightUi';
 import './styles/feed.css';
 
 const Feed = () => {
-  const isLogin = false;
+  const isLogin = true;
   return (
     <main >
       <LeftUi
