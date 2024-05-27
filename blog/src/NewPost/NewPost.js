@@ -37,7 +37,9 @@ const NewPost = () => {
 	/>
   */
   const savePost = async () => {
-    const response = await fetch('http://localhost:8000/blogs/create', {      method: 'POST',
+    const response = await fetch('http://localhost:8000/blogs/create', {
+      method: 'POST',
+      credentials: 'include',
       body: JSON.stringify({ content, title }),
       headers: {
         'Content-Type': 'application/json',
@@ -45,15 +47,13 @@ const NewPost = () => {
     });
     const data = await response.json();
 
+
     if (response.ok) {
-      const { success, message } = data;
-      if (success) {
         toast.success(message, { position: 'bottom-right' });
         navigate('/');
       } else {
         toast.error(message, { position: 'bottom-right' });
       }
-    }
   }
 
   return (
@@ -75,7 +75,7 @@ const NewPost = () => {
 	  />
 	</div>
 	<div className='post-button-div'>
-	  <button onClick={savePost}>Post</button>
+	  <button onClick={savePost}>Create Post</button>
 	</div>
       </div>
     </div>

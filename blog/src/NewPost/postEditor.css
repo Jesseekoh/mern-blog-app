@@ -15,18 +15,17 @@
 .editor{
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   /*align-items: center;*/
   justify-content: space-between;
-  border: 1px solid blue;
 }
 
 .post-button-div {
   padding: 20px;
   height: 100%;
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
