@@ -48,7 +48,10 @@ const BlogPost = ({ id, title, likes, views, authorId, createdAt }) => {
         </div>
         <div className="blog__desc_main">
           <Link to={`/blogs/${id}`}>
-            <h2 className="blog__title text-4xl font-bold">{title}</h2>
+	    <div
+	      className="blog__title text-4xl font-bold"
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
           </Link>
         </div>
 
