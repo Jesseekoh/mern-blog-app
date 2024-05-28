@@ -93,6 +93,7 @@ Explain your code style and show how to check it.
 If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
 
 
+
 ## Database
 
 For this project we made use of MongoDB v7.0.9
@@ -160,12 +161,9 @@ const blogSchema = new Schema({
     default: 0,
   },
 });
-
-
 ```
 
 
-Documents your database design and schemas, relations etc... 
 
 ## Licensing
 
