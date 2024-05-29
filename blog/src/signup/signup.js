@@ -26,8 +26,10 @@ const SignupUi = () => {
     if (response.ok) {
       const { success, message } = data;
       if (success) {
-        toast.success(message, { position: 'bottom-right' });
-        navigate('/');
+        toast.success('User created successfully', {
+          position: 'bottom-right',
+        });
+        navigate('/login');
       } else {
         toast.error(message, { position: 'bottom-right' });
       }
