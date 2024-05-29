@@ -19,7 +19,7 @@ Before running the script below, first head to the [mongodb install tutorial](ht
 ```shell
 
 git clone https://github.com/jesseekoh/mern-blog-app.git
-cd mern-blog-app/client
+cd mern-blog-app/blog
 pnpm i
 cd ../backend
 pnpm i
@@ -27,19 +27,22 @@ pnpm dev # this starts the express server
 
 
 # in a different terminal tab or window
-cd mern-blog-app/client
+cd mern-blog-app/blog
 pnpm dev # this starts the react app
 
 
 ```
 
-Here you should say what actually happens when you execute the code above.
-
 The first pnpm dev starts an express server running on port 8000 and the second pnpm dev starts a react app running on port 5173. If you successfully installed mongosh, the the DBClient should be connected on the default mongosh port which is 27017.
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+* [React](https://react.dev)
+* [Express](https://expressjs.com)
+* [MongoDB](https://mongodb.com)
+* [NodeJs](https://nodejs.org)
+* [Mongoose](https://mongoosejs.com)  
+
 
 ### Prerequisites
 What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
@@ -185,6 +188,3 @@ const blogSchema = new Schema({
 
 * Ability to change account details like username, password and also profile picture
 
-## Licensing
-
-State what the license is and how to find the text version of the license.
