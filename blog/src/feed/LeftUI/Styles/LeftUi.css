@@ -81,3 +81,16 @@ p {
   height: 100%;
   width: 100%;
 }
+.logout-list-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout-icon-div {
+  margin-right: 30px;
+}
+
+.logout-list-item p {
+  font-weight: 500;
+}

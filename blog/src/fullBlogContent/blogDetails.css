@@ -1,0 +1,25 @@
+.blog-content-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding: 30px 0;
+  border-bottom: 1px solid green;
+}
+
+.post-content-div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.blog-content-div a {
+  color: green;
+}

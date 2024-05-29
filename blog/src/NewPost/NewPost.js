@@ -46,12 +46,11 @@ const NewPost = () => {
       },
     });
     const data = await response.json();
-    console.log(response)
 
 
-    if (response.ok) {
+    if (response.status === 200) {
         toast.success('Post Created Sucessfully!', { position: 'bottom-right' });
-        //navigate('/');
+        navigate('/');
       } else {
         toast.error('Create Post Unsucessful!', { position: 'bottom-right' });
       }

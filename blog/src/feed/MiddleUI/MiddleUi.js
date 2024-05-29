@@ -40,9 +40,6 @@ const MiddleUi = () => {
       ) : (
         <h3>There are no posts</h3>
       )}
-      <Post commentsNo={2} likesNo={4} viewsNo={8} dislikesNo={1} />
-
-      <Post />
     </section>
   );
 };

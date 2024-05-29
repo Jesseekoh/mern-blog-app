@@ -6,26 +6,32 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Settings from './settings/settings';
 import SignUpUi from './signup/signup';
 import LogInUi from './login/login';
-import FullBlogUi from './fullBlogContent/fullBlogUi';
+import BlogDetails from './fullBlogContent/blogDetails';
+import { loginContext } from './loginContext';
+import { useState } from 'react';
 /*
 import Axios from 'axios';
 import { useEffect, useState } from 'react';
 */
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<Feed />} />
-        <Route path='/feed' element={<Feed />} />
-        <Route path='/profile/*' element={<Profile />} />
-        <Route path='/new-post' element={<NewPost />} />
-        <Route path='/settings' element={<Settings />} />
-        <Route path='/blog-content' element={<FullBlogUi />} />
-        <Route path='/signup' element={<SignUpUi />} />
-        <Route path='/login' element={<LogInUi />} />
-        <Route path='*' element={<Notfound />} />
-      </Routes>
+      <loginContext.Provider value={{isLogin, setIsLogin}}>
+        <Routes>
+          <Route path='/' element={<Feed />} />
+          <Route path='/feed' element={<Feed />} />
+          <Route path='/profile/:id' element={<Profile />} />
+          <Route path='/new-post' element={<NewPost />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/signup' element={<SignUpUi />} />
+          <Route path='/login' element={<LogInUi />} />
+          <Route path='/blogs/:id' element={<BlogDetails />} />
+          <Route path='*' element={<Notfound />} />
+        </Routes>
+      </loginContext.Provider>
     </Router>
   );
 }

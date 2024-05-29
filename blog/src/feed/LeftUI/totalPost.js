@@ -1,7 +1,7 @@
-const userPostNum = () => {
+const userPostNum = ({ total }) => {
   return (
     <div className='total-post-div'>
-      <p>5k Posts</p>
+      <p>{total} Posts</p>
     </div>
   );
 }

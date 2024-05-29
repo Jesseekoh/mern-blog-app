@@ -1,8 +1,9 @@
-const UserBio = () => {
+const UserBio = ({ data }) => {
   return (
     <div className='bio-div'>
-      <p>Proffessional Software Engineer | Solution Archetech</p>
-      <p id='address-info'>St.Louis New York - US</p>
+      <p>{data.bio}</p>
+      <p id='address-info'>{data.country}</p>
+      <p id='address-info'>{data.email}</p>
     </div>
   );
 }

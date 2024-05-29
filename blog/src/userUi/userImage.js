@@ -1,5 +1,5 @@
 import './styles/userImage.css';
-import defaultImage from '../assets/vinicius-wiesehofer.jpg';
+import defaultImage from '../assets/icons8-user-50.png';
 
 const userImage = ({
   height=50,

@@ -16,8 +16,14 @@
 }
 
 .profile-middle-ui .user-image-div {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid lightblue;
+}
+
+.profile-middle-ui .user-image-div img {
+  border-radius: unset;
 }
 
 .profile-middle-ui .user-image-div {
@@ -28,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  margin-top: -110px;
+  margin-top: -60px;
 }
 .profile-middle-ui .bio-div p {
   margin-bottom: 5px;

@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { loginContext } from '../loginContext';
+
 const LoginUi = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {isLogin, setIsLogin} = useContext(loginContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -23,6 +26,7 @@ const LoginUi = () => {
       toast.success(message, {
         position: 'top-right',
       });
+      setIsLogin(true);
       navigate('/');
     } else {
       toast.error(message, { position: 'top-right' });
