@@ -8,6 +8,7 @@ import SignUpUi from './signup/signup';
 import LogInUi from './login/login';
 import BlogDetails from './fullBlogContent/blogDetails';
 import { loginContext } from './loginContext';
+import { postContext } from './postContext';
 import { useState } from 'react';
 /*
 import Axios from 'axios';
@@ -16,10 +17,12 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
+  const [postNo, setPostNo] = useState(0);
 
   return (
     <Router>
       <loginContext.Provider value={{isLogin, setIsLogin}}>
+      <postContext.Provider value={{postNo, setPostNo}}>
         <Routes>
           <Route path='/' element={<Feed />} />
           <Route path='/feed' element={<Feed />} />
@@ -31,6 +34,7 @@ function App() {
           <Route path='/blogs/:id' element={<BlogDetails />} />
           <Route path='*' element={<Notfound />} />
         </Routes>
+      </postContext.Provider>
       </loginContext.Provider>
     </Router>
   );

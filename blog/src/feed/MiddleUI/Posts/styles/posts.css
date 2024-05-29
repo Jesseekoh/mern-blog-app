@@ -49,3 +49,22 @@
 .post-content {
   font-size: 30px;
 }
+
+.img__wrapper {
+  position: relative;
+}
+.delete-blog-div {
+  border: 1px solid green;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.delete-blog-div button {
+  padding: 10px 20px;
+  font-weight: 600;
+}

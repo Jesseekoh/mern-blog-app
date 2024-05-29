@@ -9,23 +9,52 @@ import '../Posts/styles/posts.css';
 import defaultImage from '../../../assets/frank.jpg';
 import BlogContent from './blogContent';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import {postContext} from '../../../postContext';
 
 const BlogPost = ({ id, title, likes, views, authorId, createdAt }) => {
   const [authorName, setAuthorName] = useState('');
-  console.log(authorId);
+  const { postNo, setPostNo } = useContext(postContext);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const getAuthorName = async () => {
       const response = await fetch(`http://localhost:8000/profile/${authorId}`);
       const data = await response.json();
       setAuthorName(data.data.username);
-      console.log(data);
     };
     getAuthorName();
   }, []);
+
+  const deletePost = () => {
+    fetch(`http://localhost:8000/blogs/post/${id}`, {
+      credentials: 'include',
+      method: 'DELETE'
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Opps unable to delete post!');
+        }
+        return res.json();
+      })
+      .then(data => {
+        toast.success(data.message, { position: 'top-right' });
+	setPostNo(postNo - 1);
+        navigate('/');
+      })
+      .catch(err => {
+        toast.error(err.message, { position: 'top-right' });
+      });
+  }
+   
   return (
     <div className="blog-card mb-2 bg-white">
       <div className="img__wrapper">
+	<div className='delete-blog-div'>
+	  <button onClick={deletePost}>Delete</button>
+	</div>
         <Link to={`/blogs/${id}`}>
           <img
             src={'https://placehold.co/800x250?text=Blog+Image'}
