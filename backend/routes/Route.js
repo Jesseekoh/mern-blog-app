@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import {
   login,
   signup,
@@ -16,14 +15,6 @@ import {
   getBlog,
 } from '../controllers/BlogController.js';
 const router = express.Router();
-=======
-import {login, signup, logout, verifyUserWithCookie} from '../controllers/AuthController.js'
-import express from 'express'
-import {getMe, getProfile} from '../controllers/UserController.js'
-import { verifyToken } from '../middlewares/AuthMiddleware.js'
-import { createBlogPost, getAllBlogs, getBlog, getUserBlog} from '../controllers/BlogController.js'
-const router = express.Router()
->>>>>>> Stashed changes
 
 // Auth routes
 router.post('/signup', signup);
@@ -51,11 +42,7 @@ router.delete('/blogs/post/:blogId', verifyToken, deletePost);
 // fetch post
 router.get('/blogs/post/:blogId', getBlog);
 
-<<<<<<< Updated upstream
-export default router;
-=======
 // get all user blog post
 router.get('/blogs/user/:id', getUserBlog)
 
 export default router
->>>>>>> Stashed changes
