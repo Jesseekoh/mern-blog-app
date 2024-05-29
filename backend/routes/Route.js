@@ -14,6 +14,7 @@ import {
   getAllBlogs,
   getUserBlog,
   getBlog,
+  getUserBlog
 } from '../controllers/BlogController.js';
 const router = express.Router();
 

@@ -1,5 +1,4 @@
 import Blog from '../models/BlogModel.js';
-
 import { ObjectId } from 'mongodb';
 
 export const createBlogPost = async (req, res) => {
@@ -108,7 +107,6 @@ export const getAllBlogs = async (req, res) => {
     return res.status(404).json({ error: 'No Documents found' });
   }
 
-  // res.json({message: 'Yo, it works'})
   return res.status(200).json({ success: true, data: blogs });
 };
 
