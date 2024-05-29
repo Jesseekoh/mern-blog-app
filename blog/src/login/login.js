@@ -7,7 +7,7 @@ import { loginContext } from '../loginContext';
 const LoginUi = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {isLogin, setIsLogin} = useContext(loginContext);
+  const { isLogin, setIsLogin } = useContext(loginContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -52,7 +52,7 @@ const LoginUi = () => {
             <div className="signup-details-div">
               <label>Password</label>
               <input
-                type="text"
+                type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
