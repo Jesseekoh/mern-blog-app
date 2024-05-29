@@ -1,5 +1,5 @@
 import Blog from '../models/BlogModel.js';
-import{ ObjectId } from 'mongodb';
+import { ObjectId } from 'mongodb';
 
 export const createBlogPost = async (req, res) => {
   // console.log(req.currentUser)
@@ -84,9 +84,9 @@ export const deletePost = async (req, res) => {
  * @returns
  */
 export const getBlog = async (req, res) => {
-  const {blogId}= req.params;
+  const { blogId } = req.params;
 
-  const blog = await Blog.findOne({_id: blogId})
+  const blog = await Blog.findOne({ _id: blogId });
 
   if (!blog) {
     return res.status(404).json({ error: 'Document not found' });
@@ -107,8 +107,8 @@ export const getAllBlogs = async (req, res) => {
     return res.status(404).json({ error: 'No Documents found' });
   }
 
-  return res.status(200).json({success: true, data: blogs})
-}
+  return res.status(200).json({ success: true, data: blogs });
+};
 
 export const getUserBlog = async (req, res) => {
   const author = new ObjectId(req.params.id);
@@ -116,8 +116,8 @@ export const getUserBlog = async (req, res) => {
   const blogs = await Blog.find({ author });
 
   if (!blogs) {
-    return res.status(404).json({error: "No Documents found"})
+    return res.status(404).json({ error: 'No Documents found' });
   }
 
-  return res.status(200).json({success: true, data: blogs})
-}
+  return res.status(200).json({ success: true, data: blogs });
+};

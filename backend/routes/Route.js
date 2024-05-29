@@ -12,6 +12,7 @@ import {
   deletePost,
   editPost,
   getAllBlogs,
+  getUserBlog,
   getBlog,
   getUserBlog
 } from '../controllers/BlogController.js';
@@ -44,6 +45,6 @@ router.delete('/blogs/post/:blogId', verifyToken, deletePost);
 router.get('/blogs/post/:blogId', getBlog);
 
 // get all user blog post
-router.get('/blogs/user/:id', getUserBlog)
+router.get('/blogs/user/:id', getUserBlog);
 
-export default router
+export default router;
