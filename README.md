@@ -55,28 +55,11 @@ the project further:
 
 ```shell
 git clone https://github.com/jesseekoh/mern-blog-app.git
-cd mern-blog-app/
+cd mern-blog-app/blog
+pnpm install
+cd ../backend
 pnpm install
 ```
-
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-
-And again you'd need to tell what the previous code actually does.
 
 
 ## Configuration
