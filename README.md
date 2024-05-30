@@ -77,28 +77,28 @@ Explain your code style and show how to check it.
 ## Api Reference
 
 
-POST /signup - The signup route accepts an email, username, bio, country, and password. Upon signup a token is stored in the cookie    
+**POST** /signup - The signup route accepts an email, username, bio, country, and password. Upon signup a token is stored in the cookie    
 
-POST /login - The login route accepts an email and a password. Upon login a token is stored in the cookie.  
+**POST** /login - The login route accepts an email and a password. Upon login a token is stored in the cookie.  
 
-GET /logout - this invalidates the token by setting it to a null string.  
+**GET** /logout - this invalidates the token by setting it to a null string.  
 
-GET /verify-user-with-cookie - this removes the need for the user to always login. As long as there is a valid token stored in the cookie, the server decodes the token and checks it against the User Database. If the user is valid it sends the user's name, email and id which the frontend then uses to update state.  
+**GET** /verify-user-with-cookie - this removes the need for the user to always login. As long as there is a valid token stored in the cookie, the server decodes the token and checks it against the User Database. If the user is valid it sends the user's name, email and id which the frontend then uses to update state.  
 
 
-GET /myProfile - returns details of the currently signed in user.  
+**GET** /myProfile - returns details of the currently signed in user.  
 
-GET /profile/:profileId - returns the info of the user with profileId. It returns and error message with status code 404 if the user is not found.  
+**GET** /profile/:profileId - returns the info of the user with profileId. It returns and error message with status code 404 if the user is not found.  
 
-GET /blogs/post/:blogId Get a blogpost with and id of blogId.  
+**GET** /blogs/post/:blogId Get a blogpost with and id of blogId.  
 
-DELETE /blogs/post/:blogId Deletes a blogpost with and id of blogId.  
+**DELETE** /blogs/post/:blogId Deletes a blogpost with and id of blogId.  
 
-POST /blogs/create - this accepts a blog title, and a blog content. Only authenticated users can create blog post.  
+**POST** /blogs/create - this accepts a blog title, and a blog content. Only authenticated users can create blog post.  
 
-PUT /blogs/post/:blogId - this edits an existing blog post. If a blog with blogId does not exist it returns a message with a status code of 404. 
+**PUT** /blogs/post/:blogId - this edits an existing blog post. If a blog with blogId does not exist it returns a message with a status code of 404. 
 
-GET /blogs/all - this returns all blogs to display on the blog feed.  
+**GET** /blogs/all - this returns all blogs to display on the blog feed.  
 
 
 
