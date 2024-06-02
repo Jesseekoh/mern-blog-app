@@ -6,6 +6,7 @@ import './styles/feed.css';
 import useFetch from '../useFetch';
 import { useState, useContext, useEffect } from 'react';
 import { loginContext } from '../loginContext';
+import AppProgress from './progress';
 
 const Feed = () => {
   const {isLogin, setIsLogin} = useContext(loginContext);
@@ -36,7 +37,7 @@ const Feed = () => {
 
   return (
     <>
-    {isLoading && <div>Loading...</div>}
+    {isLoading && <AppProgress />}
     {(error || data) && <main >
        <DeleteDialog />
        <LeftUi
