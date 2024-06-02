@@ -1,3 +1,4 @@
+import DeleteDialog from './MiddleUI/blogPost/deleteDialog';
 import LeftUi from './LeftUI/LeftUi';
 import MiddleUi from './MiddleUI/MiddleUi';
 import RightUi from './RightUI/RightUi';
@@ -37,6 +38,7 @@ const Feed = () => {
     <>
     {isLoading && <div>Loading...</div>}
     {(error || data) && <main >
+       <DeleteDialog />
        <LeftUi
         isLogin={isLogin}
 	user={data}

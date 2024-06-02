@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import Likes from '../Posts/Like';
 import Comments from '../Posts/Comment';
 import Views from '../Posts/View';
@@ -10,17 +11,20 @@ import defaultImage from '../../../assets/frank.jpg';
 import BlogContent from './blogContent';
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import { postContext } from '../../../postContext';
+import {
+	postContext,
+	deleteIdContext,
+	deletePostContext
+} from '../../../postContext';
 import { CiBookmarkPlus } from 'react-icons/ci';
 import { GoEye } from 'react-icons/go';
 import { BsHandThumbsUp } from 'react-icons/bs';
 
 const BlogPost = ({ id, title, likes, views, authorId, createdAt }) => {
+  const { openDeleteDialog, setDeleteDialog } = useContext(deletePostContext);
   const [authorName, setAuthorName] = useState('');
   const { postNo, setPostNo } = useContext(postContext);
-  const navigate = useNavigate();
+  const {blogId, setBlogId} = useContext(deleteIdContext)
 
   useEffect(() => {
     const getAuthorName = async () => {
@@ -31,32 +35,16 @@ const BlogPost = ({ id, title, likes, views, authorId, createdAt }) => {
     getAuthorName();
   }, []);
 
-  const deletePost = () => {
-    fetch(`http://localhost:8000/blogs/post/${id}`, {
-      credentials: 'include',
-      method: 'DELETE',
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Opps unable to delete post!');
-        }
-        return res.json();
-      })
-      .then((data) => {
-        toast.success(data.message, { position: 'top-right' });
-        setPostNo(postNo - 1);
-        navigate('/');
-      })
-      .catch((err) => {
-        toast.error(err.message, { position: 'top-right' });
-      });
-  };
+  const deleteBlog = () => {
+    setDeleteDialog(true);
+    setBlogId(id)
+  }
 
   return (
-    <div className="blog-card mb-2 bg-white">
+    <div className="blog-card mb-10 bg-white">
       <div className="img__wrapper">
-        <div className="delete-blog-div">
-          <button onClick={deletePost}>Delete</button>
+        <div className="delete-blogg-div">
+          <Button onClick={deleteBlog}>Delete</Button>
         </div>
         <Link to={`/blogs/${id}`}>
           <img

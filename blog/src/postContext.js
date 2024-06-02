@@ -1,5 +1,7 @@
 import { createContext } from 'react';
 
-const postContext = createContext(0);
+const postContext = createContext([]);
+const deletePostContext = createContext(false);
+const deleteIdContext = createContext(null);
 
-export { postContext };
+export { postContext, deletePostContext, deleteIdContext };

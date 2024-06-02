@@ -5,7 +5,6 @@ main {
 
 .main-ui {
     display: grid;
-    border: 1px solid lightgreen;
     grid-template-columns: 1fr;
     margin-left: 280px;
     margin-right: 370px;

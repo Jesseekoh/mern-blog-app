@@ -8,7 +8,11 @@ import SignUpUi from './signup/signup';
 import LogInUi from './login/login';
 import BlogDetails from './fullBlogContent/blogDetails';
 import { loginContext } from './loginContext';
-import { postContext } from './postContext';
+import {
+	postContext,
+	deletePostContext,
+	deleteIdContext
+} from './postContext';
 import { useState } from 'react';
 /*
 import Axios from 'axios';
@@ -17,12 +21,16 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-  const [postNo, setPostNo] = useState(0);
+  const [openDeleteDialog, setDeleteDialog] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [blogId, setBlogId] = useState(null);
 
   return (
-    <Router>
+    <Router> 
+      <deleteIdContext.Provider value={{blogId, setBlogId}}>
+      <deletePostContext.Provider value={{openDeleteDialog, setDeleteDialog}}>
       <loginContext.Provider value={{isLogin, setIsLogin}}>
-      <postContext.Provider value={{postNo, setPostNo}}>
+      <postContext.Provider value={{posts, setPosts}}>
         <Routes>
           <Route path='/' element={<Feed />} />
           <Route path='/feed' element={<Feed />} />
@@ -36,6 +44,8 @@ function App() {
         </Routes>
       </postContext.Provider>
       </loginContext.Provider>
+      </deletePostContext.Provider>
+      </deleteIdContext.Provider>
     </Router>
   );
 }
