@@ -58,6 +58,7 @@ const NewPost = () => {
 
   return (
     <div className='containerr'>
+      <button className='p-4 rounded-sm bg-blue-400' onClick={() => navigate(-1)}>back</button>
       <div className='row'>
         <div className='editor'>
 
